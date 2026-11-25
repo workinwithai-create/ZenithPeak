@@ -1,1 +1,30 @@
-PLACEHOLDER
+:root { --bg:#0d0d12; --fg:#e8e8f0; --acc:#7c5cff; --muted:#888; }
+* { box-sizing: border-box; }
+body { margin:0; background:var(--bg); color:var(--fg); font:14px/1.4 system-ui,sans-serif; padding:12px; }
+#tap-overlay { position:fixed; inset:0; background:rgba(0,0,0,.85); display:flex; align-items:center; justify-content:center; flex-direction:column; font-size:1.4rem; z-index:100; cursor:pointer; }
+#tap-overlay.hidden { display:none; }
+header { display:flex; justify-content:space-between; align-items:center; margin-bottom:12px; }
+h1 { margin:0; font-size:1.6rem; color:var(--acc); }
+#status { font-size:.85rem; color:var(--muted); }
+.controls { display:flex; flex-wrap:wrap; gap:10px 16px; align-items:center; margin-bottom:12px; }
+.controls label { display:flex; align-items:center; gap:6px; }
+.controls input, .controls select, .controls button { background:#1a1a22; color:var(--fg); border:1px solid #333; border-radius:4px; padding:4px 8px; }
+button { cursor:pointer; }
+button:hover { border-color:var(--acc); }
+#recipes { display:flex; gap:6px; flex-wrap:wrap; }
+#recipes button { background:#222; }
+#recipes button.on { background:var(--acc); color:#fff; }
+#playhead-wrap { height:6px; background:#222; border-radius:3px; margin:8px 0; position:relative; overflow:hidden; }
+#playhead { position:absolute; top:0; left:0; width:2px; height:100%; background:var(--acc); }
+#grids { display:flex; flex-direction:column; gap:10px; }
+.chair { background:#15151c; padding:8px; border-radius:6px; }
+.chair h3 { margin:0 0 6px; font-size:.95rem; display:flex; gap:12px; align-items:center; flex-wrap:wrap; }
+.steps { display:grid; grid-template-columns:repeat(16,1fr); gap:2px; }
+.step { height:22px; background:#2a2a34; border-radius:2px; cursor:pointer; }
+.step.on { background:var(--acc); }
+.step.current { outline:2px solid #fff; }
+.step.vel-low { opacity:.55; }
+.step.vel-med { opacity:.8; }
+.step.vel-high { opacity:1; }
+#punch { margin-top:16px; white-space:pre-wrap; font-family:ui-monospace,monospace; font-size:.8rem; color:#aaa; background:#111; padding:10px; border-radius:4px; }
+@media (max-width:600px) { .steps { grid-template-columns:repeat(8,1fr); } }
