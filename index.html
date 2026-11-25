@@ -1,1 +1,47 @@
-PLACEHOLDER
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>ZenithPeak — peak multi-chair live step-grid</title>
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<div id="tap-overlay">Tap to start audio<br><small>iOS: silent switch mutes Web Audio</small></div>
+<header>
+  <h1>ZenithPeak</h1>
+  <div id="status">Tap to start · loading samples…</div>
+</header>
+<section class="controls">
+  <label>BPM <input id="bpm" type="number" min="60" max="180" value="92"></label>
+  <label>Key <select id="key">
+    <option value="A minor">A minor</option>
+    <option value="C major">C major</option>
+    <option value="D minor">D minor</option>
+    <option value="E minor">E minor</option>
+    <option value="G major">G major</option>
+    <option value="F major">F major</option>
+    <option value="Bb major">Bb major</option>
+    <option value="D major">D major</option>
+    <option value="E major">E major</option>
+  </select></label>
+  <label>Chords <input id="chords" value="Am F C G" placeholder="Am F C G"></label>
+  <label>Bars <select id="bars"><option value="4">4</option><option value="8" selected>8</option><option value="16">16</option></select></label>
+  <label>Swing <input id="swing" type="range" min="0" max="60" value="0"> <span id="swing-val">0%</span></label>
+  <label>Humanize <input id="humanize" type="range" min="0" max="40" value="0"> <span id="humanize-val">0%</span></label>
+  <label>Delay <input id="delay" type="range" min="0" max="0.6" step="0.05" value="0"> <span id="delay-val">0</span></label>
+  <div id="recipes"></div>
+  <button id="play">Play</button>
+  <button id="stop">Stop</button>
+  <button id="export-wav">Export WAV (folded)</button>
+  <button id="export-tail">Export WAV (with tail)</button>
+  <button id="export-midi">Export MIDI</button>
+  <label>MIDI in <button id="midi-btn">Enable MIDI</button> <span id="midi-status">off</span></label>
+  <label>Record chair <select id="rec-chair"><option value="">none</option></select></label>
+</section>
+<div id="playhead-wrap"><div id="playhead"></div></div>
+<section id="grids"></section>
+<div id="punch"></div>
+<script src="app.js"></script>
+</body>
+</html>
